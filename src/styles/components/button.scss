@@ -1,0 +1,163 @@
+$button-prefix: "#{$css-namespace}button";
+
+.#{$button-prefix} {
+  display: inline-block;
+  text-align: center;
+  color: $button-default-color;
+  border: $border-base;
+  border-color: $button-default-border-color;
+  background-color: $button-default-bg;
+  line-height: 1;
+  font-weight: $button-font-weight;
+  transition: 0.1s;
+  white-space: nowrap;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include u-select(none);
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include button-size(
+    $button-padding-vertical,
+    $button-padding-horizontal,
+    $button-font-size,
+    $button-border-radius
+  );
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+    border-color: $color-primary-light-7;
+    background-color: $color-primary-light-9;
+  }
+
+  &:active {
+    color: mix($color-black, $color-primary, 10%);
+    border-color: mix($color-black, $color-primary, 10%);
+    outline: none;
+  }
+
+  &.is-plain {
+    &:hover,
+    &:focus {
+      background: $color-white;
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    &:active {
+      background: $color-white;
+      border-color: mix($color-black, $color-primary, 10%);
+      color: mix($color-black, $color-primary, 10%);
+      outline: none;
+    }
+  }
+
+  &.is-active {
+    color: mix($color-black, $color-primary, 10%);
+    border-color: mix($color-black, $color-primary, 10%);
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus {
+      color: $disabled-color-base;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $disabled-fill-base;
+      border-color: $disabled-border-base;
+    }
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+
+    &.is-plain {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $color-white;
+        border-color: $disabled-border-base;
+        color: $button-disabled-color;
+      }
+    }
+  }
+
+  &.is-round {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: $button-padding-vertical;
+  }
+
+  @at-root .#{$button-prefix}-primary {
+    @include button-variant(
+      $button-primary-font-color,
+      $button-primary-bg,
+      $button-primary-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-success {
+    @include button-variant(
+      $button-success-font-color,
+      $button-success-bg,
+      $button-success-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-warning {
+    @include button-variant(
+      $button-warning-font-color,
+      $button-warning-bg,
+      $button-warning-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-danger {
+    @include button-variant(
+      $button-danger-font-color,
+      $button-danger-bg,
+      $button-danger-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-info {
+    @include button-variant(
+      $button-info-font-color,
+      $button-info-bg,
+      $button-info-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-medium {
+    @include button-size(
+      $button-medium-padding-vertical,
+      $button-medium-padding-horizontal,
+      $button-medium-font-size,
+      $button-medium-border-radius
+    );
+    &.is-circle {
+      padding: $button-medium-padding-vertical;
+    }
+  }
+
+  @at-root .#{$button-prefix}-small {
+    @include button-size(
+      $button-small-padding-vertical,
+      $button-small-padding-horizontal,
+      $button-small-font-size,
+      $button-small-border-radius
+    );
+    &.is-circle {
+      padding: $button-small-padding-vertical;
+    }
+  }
+}
