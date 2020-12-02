@@ -1,0 +1,108 @@
+$button-prefix: "#{$css-namespace}btn";
+
+.#{$button-prefix} {
+  display: inline-block;
+  text-align: center;
+  color: $button-default-color;
+  border: $border-base;
+  border-color: $button-default-border-color;
+  background-color: $button-default-bg;
+  line-height: 1;
+  font-weight: $button-font-weight;
+  transition: 0.1s;
+  white-space: nowrap;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  @include u-select(none);
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include button-size(
+    $button-padding-vertical,
+    $button-padding-horizontal,
+    $button-font-size,
+    $button-border-radius
+  );
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+    border-color: $color-primary-light-2;
+    background-color: $color-primary-light-3;
+  }
+
+  &:active {
+    color: mix($color-black, $color-primary, 10%);
+    border-color: mix($color-black, $color-primary, 10%);
+    outline: none;
+  }
+
+  &.is-active {
+    color: mix($color-black, $color-primary, 10%);
+    border-color: mix($color-black, $color-primary, 10%);
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus {
+      color: $disabled-color-base;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $disabled-fill-base;
+      border-color: $disabled-border-base;
+    }
+
+    &.el-button--text {
+      background-color: transparent;
+    }
+  }
+
+  &.is-round {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+
+  @at-root .#{$button-prefix}-primary {
+    @include button-variant(
+      $button-primary-font-color,
+      $button-primary-bg,
+      $button-primary-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-success {
+    @include button-variant(
+      $button-success-font-color,
+      $button-success-bg,
+      $button-success-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-warning {
+    @include button-variant(
+      $button-warning-font-color,
+      $button-warning-bg,
+      $button-warning-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-danger {
+    @include button-variant(
+      $button-danger-font-color,
+      $button-danger-bg,
+      $button-danger-border-color
+    );
+  }
+
+  @at-root .#{$button-prefix}-info {
+    @include button-variant(
+      $button-info-font-color,
+      $button-info-bg,
+      $button-info-border-color
+    );
+  }
+}

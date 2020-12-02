@@ -1,0 +1,46 @@
+@mixin button-size($padding-v, $padding-h, $font-size, $border-radius) {
+  padding: $padding-v $padding-h;
+  font-size: $font-size;
+  border-radius: $border-radius;
+
+  &.is-round {
+    padding: $padding-v $padding-h;
+  }
+}
+
+@mixin button-variant($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+
+  &:hover,
+  &:focus {
+    background: mix($color-white, $background-color, 20%);
+    border-color: mix($color-white, $border-color, 20%);
+    color: $color;
+  }
+
+  &:active {
+    background: mix($color-black, $background-color, 10%);
+    border-color: mix($color-black, $border-color, 10%);
+    color: $color;
+    outline: none;
+  }
+
+  &.is-active {
+    background: mix($color-black, $background-color, 10%);
+    border-color: mix($color-black, $border-color, 10%);
+    color: $color;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-white;
+      background-color: mix($background-color, $color-white);
+      border-color: mix($border-color, $color-white);
+    }
+  }
+}
