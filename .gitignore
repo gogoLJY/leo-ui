@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+.storybook
 node_modules/
 npm-debug.log
 yarn-debug.log

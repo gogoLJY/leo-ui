@@ -14,7 +14,7 @@ const webpackProdConfig = {
     path: path.resolve(__dirname, '../lib'),
     filename: 'leo-ui.js',
     library: 'LeoUI',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     libraryExport: 'default',
     umdNamedDefine: true,
   },

@@ -1,7 +1,8 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="handleClick">
-    <i class="leo-icon-loading" v-if="loading"></i>
-    <i :class="icon" v-if="icon && !loading" />
+    <!--  
+      <i :class="icon" v-if="icon && !loading" />
+    -->
     <span v-if="$slots.default">
       <slot></slot>
     </span>
@@ -12,24 +13,14 @@
 const prefix = 'leo-btn';
 
 export default {
-  name: 'LeoCard',
+  name: 'Button',
   props: {
     type: {
       type: String,
       default: 'default',
     },
-    size: {
-      type: String,
-      default: 'default',
-    },
-    icon: {
-      type: String,
-      default: '',
-    },
-    loading: Boolean,
     disabled: Boolean,
     round: Boolean,
-    circle: Boolean,
   },
   data() {
     return {};
@@ -42,16 +33,14 @@ export default {
         this.size ? `${prefix}-${this.size}` : '',
         {
           'is-disabled': this.disabled,
-          'is-loading': this.loading,
-          'is-round': round,
-          'is-circle': circle,
+          'is-round': this.round,
         },
       ];
     },
   },
   methods: {
     handleClick(event) {
-      this.$emit('click', event);
+      this.$emit('on-click', event);
     },
   },
 };

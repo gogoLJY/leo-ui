@@ -13,15 +13,9 @@ $color-info: #2db7f5 !default;
 $color-white: #ffffff !default;
 $color-black: #000000 !default;
 
-$color-primary-light-1: mix($color-white, $color-primary, 10%) !default;
-$color-primary-light-2: mix($color-white, $color-primary, 20%) !default;
-$color-primary-light-3: mix($color-white, $color-primary, 30%) !default;
-$color-primary-light-4: mix($color-white, $color-primary, 40%) !default;
-$color-primary-light-5: mix($color-white, $color-primary, 50%) !default;
-$color-primary-light-6: mix($color-white, $color-primary, 60%) !default;
-$color-primary-light-7: mix($color-white, $color-primary, 70%) !default;
-$color-primary-light-8: mix($color-white, $color-primary, 80%) !default;
-$color-primary-light-9: mix($color-white, $color-primary, 90%) !default;
+$color-primary-light: mix($color-white, $color-primary, 20%) !default;
+$color-primary-light-2: mix($color-white, $color-primary, 70%) !default;
+$color-primary-light-3: mix($color-white, $color-primary, 90%) !default;
 
 $color-success-light: mix($color-white, $color-success, 80%) !default;
 $color-warning-light: mix($color-white, $color-warning, 80%) !default;
@@ -42,7 +36,7 @@ $background-color-base: #f5f7fa !default;
 
 /* Link
 -------------------------- */
-$link-color: $color-primary-light-2 !default;
+$link-color: $color-primary-light !default;
 $link-hover-color: $color-primary !default;
 
 /* Border
@@ -95,21 +89,6 @@ $button-border-radius: $border-radius-bs !default;
 $button-padding-vertical: 12px !default;
 $button-padding-horizontal: 20px !default;
 
-$button-medium-font-size: $font-size-bs !default;
-$button-medium-border-radius: $border-radius-bs !default;
-$button-medium-padding-vertical: 10px !default;
-$button-medium-padding-horizontal: 20px !default;
-
-$button-small-font-size: 12px !default;
-$button-small-border-radius: $border-radius-bs - 1 !default;
-$button-small-padding-vertical: 9px !default;
-$button-small-padding-horizontal: 15px !default;
-
-$button-mini-font-size: 12px !default;
-$button-mini-border-radius: $border-radius-bs - 1 !default;
-$button-mini-padding-vertical: 7px !default;
-$button-mini-padding-horizontal: 15px !default;
-
 $button-disabled-color: $color-text-placeholder !default;
 $button-disabled-bg: $color-white !default;
 $button-disabled-border-color: $border-color-lighter !default;
@@ -122,18 +101,18 @@ $button-primary-border-color: $color-primary !default;
 $button-primary-font-color: $color-white !default;
 $button-primary-bg: $color-primary !default;
 
-$button-success-border-color: $color-primary !default;
+$button-success-border-color: $color-success !default;
 $button-success-font-color: $color-white !default;
-$button-success-bg: $color-primary !default;
+$button-success-bg: $color-success !default;
 
-$button-warning-border-color: $color-primary !default;
+$button-warning-border-color: $color-warning !default;
 $button-warning-font-color: $color-white !default;
-$button-warning-bg: $color-primary !default;
+$button-warning-bg: $color-warning !default;
 
-$button-danger-border-color: $color-primary !default;
+$button-danger-border-color: $color-danger !default;
 $button-danger-font-color: $color-white !default;
-$button-danger-bg: $color-primary !default;
+$button-danger-bg: $color-danger !default;
 
-$button-info-border-color: $color-primary !default;
+$button-info-border-color: $color-info !default;
 $button-info-font-color: $color-white !default;
-$button-info-bg: $color-primary !default;
+$button-info-bg: $color-info !default;

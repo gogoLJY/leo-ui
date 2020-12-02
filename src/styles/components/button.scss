@@ -1,4 +1,4 @@
-$button-prefix: "#{$css-namespace}button";
+$button-prefix: "#{$css-namespace}btn";
 
 .#{$button-prefix} {
   display: inline-block;
@@ -30,30 +30,14 @@ $button-prefix: "#{$css-namespace}button";
   &:hover,
   &:focus {
     color: $color-primary;
-    border-color: $color-primary-light-7;
-    background-color: $color-primary-light-9;
+    border-color: $color-primary-light-2;
+    background-color: $color-primary-light-3;
   }
 
   &:active {
     color: mix($color-black, $color-primary, 10%);
     border-color: mix($color-black, $color-primary, 10%);
     outline: none;
-  }
-
-  &.is-plain {
-    &:hover,
-    &:focus {
-      background: $color-white;
-      border-color: $color-primary;
-      color: $color-primary;
-    }
-
-    &:active {
-      background: $color-white;
-      border-color: mix($color-black, $color-primary, 10%);
-      color: mix($color-black, $color-primary, 10%);
-      outline: none;
-    }
   }
 
   &.is-active {
@@ -75,26 +59,11 @@ $button-prefix: "#{$css-namespace}button";
     &.el-button--text {
       background-color: transparent;
     }
-
-    &.is-plain {
-      &,
-      &:hover,
-      &:focus {
-        background-color: $color-white;
-        border-color: $disabled-border-base;
-        color: $button-disabled-color;
-      }
-    }
   }
 
   &.is-round {
     border-radius: 20px;
     padding: 12px 23px;
-  }
-
-  &.is-circle {
-    border-radius: 50%;
-    padding: $button-padding-vertical;
   }
 
   @at-root .#{$button-prefix}-primary {
@@ -135,29 +104,5 @@ $button-prefix: "#{$css-namespace}button";
       $button-info-bg,
       $button-info-border-color
     );
-  }
-
-  @at-root .#{$button-prefix}-medium {
-    @include button-size(
-      $button-medium-padding-vertical,
-      $button-medium-padding-horizontal,
-      $button-medium-font-size,
-      $button-medium-border-radius
-    );
-    &.is-circle {
-      padding: $button-medium-padding-vertical;
-    }
-  }
-
-  @at-root .#{$button-prefix}-small {
-    @include button-size(
-      $button-small-padding-vertical,
-      $button-small-padding-horizontal,
-      $button-small-font-size,
-      $button-small-border-radius
-    );
-    &.is-circle {
-      padding: $button-small-padding-vertical;
-    }
   }
 }

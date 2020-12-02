@@ -18,7 +18,9 @@
     "dist": "npm run dist:style && npm run dist:prod",
     "clean": "rimraf lib",
     "lint": "eslint --fix --ext .js,.vue src",
-    "tslint": "tslint --type-check --fix --project ."
+    "tslint": "tslint --type-check --fix --project .",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -50,6 +52,10 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
+    "@storybook/addon-actions": "^6.1.9",
+    "@storybook/addon-essentials": "^6.1.9",
+    "@storybook/addon-links": "^6.1.9",
+    "@storybook/vue": "^6.1.9",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
     "babel-loader": "^8.1.0",
@@ -87,5 +93,6 @@
   "sideEffects": [
     "*.css",
     "*.scss"
-  ]
+  ],
+  "dependencies": {}
 }
