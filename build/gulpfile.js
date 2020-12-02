@@ -4,6 +4,7 @@ const autoprefixer = require('gulp-autoprefixer'); // 根据设置浏览器版�
 const cleanCSS = require('gulp-clean-css'); // 压缩css文件，减小文件大小, 并给引用url添加版本号避免缓存
 
 function compileCSS() {
+  // 按需引入可以配置成 ../src/styles/components/*.scss
   return src('../src/styles/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(

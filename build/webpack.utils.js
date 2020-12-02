@@ -1,21 +1,28 @@
 const path = require('path');
 const glob = require('glob');
 
-function getComponentEntries(path) {
-  let files = fs.readdirSync(resolve(path));
-  const componentEntries = files.reduce((ret, item) => {
-    const itemPath = join(path, item);
-    const isDir = fs.statSync(itemPath).isDirectory();
-    if (isDir) {
-      ret[item] = resolve(join(itemPath, 'index.js'));
-    } else {
-      const [name] = item.split('.');
-      ret[name] = resolve(`${itemPath}`);
-    }
-    return ret;
-  }, {});
-
-  return componentEntries;
+export function base(basename) {
+  return `src/components/${basename}/index.js`;
 }
+export const getComponentEntries = (pathname = '') => {
+  const entries = {};
 
-getComponentEntries('components');
+  const entryFiles = glob.sync(
+    path.join(__dirname, pathname || '../src/components/*/index.js')
+  );
+
+  entryFiles.forEach((file, index) => {
+    const entryFile = entryFiles[index];
+    const matchRes = entryFile.match(/src\/components\/(.*)\/index\.js/);
+    const pageName = matchRes && matchRes[1];
+
+    entry[pageName] = path.resolve(
+      __dirname,
+      `../src/components/${pageName}/index.js`
+    );
+  });
+
+  return {
+    entries,
+  };
+};
