@@ -1,0 +1,26 @@
+@import "./normalize";
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: $font-size-bs;
+  color: $color-black;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $color-primary;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-primary-light;
+  }
+
+  &:active {
+    color: $color-primary-light;
+  }
+}
